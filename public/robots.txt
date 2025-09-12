@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://fgstmails.com/sitemap.xml
+Sitemap: https://fgstmails.com/llms.txt
