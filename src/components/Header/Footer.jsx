@@ -10,11 +10,11 @@ const Footer = () => {
         {/* Logo & Description */}
         <div className="md:w-1/4">
           <Link href="/">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="w-28 h-28 object-cover"
-            />
+            <Link href="/">
+              <span className="text-2xl sm:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#B00020] to-[#ff6f61] cursor-pointer">
+                Fgst<span className="text-[#B00020]">Mails</span>
+              </span>
+            </Link>
           </Link>
           <p className="text-sm mt-2">
             Delivering trusted updates, top stories, and expert analysis for a

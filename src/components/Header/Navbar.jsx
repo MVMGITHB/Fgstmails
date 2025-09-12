@@ -22,16 +22,17 @@ const Navbar = () => {
           {/* <div className="hidden sm:block">
             <DayDate />
           </div> */}
-              <div className="hidden sm:block">
-
-           <Link href="/">
-            <img src="/logo.png" alt="" className="w-36 h-28 object-cover" />
+          <div className="hidden sm:block">
+            <Link href="/">
+              <span className="text-2xl sm:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#B00020] to-[#ff6f61] cursor-pointer">
+                Fgst<span className="text-[#B00020]">Mails</span>
+              </span>
             </Link>
           </div>
 
           <div className="w-full flex justify-between items-center sm:hidden py-3">
             <Link href="/">
-            <img src="/logo.png" alt="" className="w-20 h-14 object-cover" />
+              <span>FgstMails</span>
             </Link>
             <button
               className="text-2xl text-[#B00020]"
@@ -47,9 +48,9 @@ const Navbar = () => {
             <img src="/logo.png" alt="" className="w-28 h-28 object-cover" />
             </Link> */}
 
-              <div className="hidden sm:block">
-            <DayDate />
-          </div>
+            <div className="hidden sm:block">
+              <DayDate />
+            </div>
           </div>
 
           <div className="hidden sm:flex gap-2 ml-auto">
@@ -81,8 +82,6 @@ const Navbar = () => {
             )}
           </div>
         </div>
-
-        
 
         {menuOpen && (
           <div className="sm:hidden px-4 pb-4 space-y-4 animate-slide-down">
@@ -124,11 +123,10 @@ const Navbar = () => {
             <Categories />
           </div>
         )}
-
       </nav>
       <div className="hidden sm:block w-full bg-[#ffffff79] ">
-          <Categories />
-        </div>
+        <Categories />
+      </div>
     </>
   );
 };
