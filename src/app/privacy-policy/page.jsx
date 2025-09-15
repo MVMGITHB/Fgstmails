@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Privacy Policy | DailyNewzMail",
+  title: "Privacy Policy | Fgstmails",
   description:
-    "Learn how DailyNewzMail collects, uses, and protects your personal data. Your privacy is important to us.",
+    "Learn how Fgstmails collects, uses, and protects your personal data. Your privacy is important to us.",
   alternates: {
     canonical: "https://fgstmails.com/privacy-policy",
   },

@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from "react";
 
-export default function DailyNewzMailPopup() {
+export default function FgstmailsPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const popupShown = localStorage.getItem("dailynewzmail_popup_shown");
+    const popupShown = localStorage.getItem("Fgstmails_popup_shown");
 
     if (!popupShown) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-        localStorage.setItem("dailynewzmail_popup_shown", "true");
+        localStorage.setItem("Fgstmails_popup_shown", "true");
       }, 7000); // Auto open after 3 seconds
 
       return () => clearTimeout(timer);

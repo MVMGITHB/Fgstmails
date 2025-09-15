@@ -4,7 +4,7 @@ import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Header/Footer";
 import { AuthProvider } from "@/components/context/auth";
 import BreadcrumbSchema from "@/components/Seo/breadcrumb";
-import DailyNewzMailPopup from "@/components/popup/registerpopup";
+import FgstmailsPopup from "@/components/popup/registerpopup";
 import Breadcrumb from "@/components/Breadcrumb/BreadCrumbVisible";
 
 const geistSans = Geist({
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
           <div className="flex flex-col min-h-screen">
             <Navbar />
 
-            <DailyNewzMailPopup />
+            <FgstmailsPopup />
             <BreadcrumbSchema />
             <Breadcrumb />
             <main className="flex-grow">{children}</main>

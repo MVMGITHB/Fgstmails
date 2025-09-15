@@ -5,7 +5,7 @@ Owner: Daily Newz Mail Media Pvt. Ltd.
 Contact: editor@fgstmails.com
 Website: https://www.fgstmails.com
 
-# DailyNewzMail Overview
+# Fgstmails Overview
 > fgstmails.com is a digital news platform delivering credible coverage on current affairs, politics, economy, world news, and editorial perspectives.
 
 ## Key Features

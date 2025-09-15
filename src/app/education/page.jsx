@@ -2,24 +2,24 @@
 import NewsUi from "@/components/NewsCategory/NewsUi";
 
 export const metadata = {
-  title: "DailyNewzMail Education – Learning, Policy & Study Insights",
+  title: "Fgstmails Education – Learning, Policy & Study Insights",
   description:
     "Stay informed on education news, policy updates, study tips, and academic trends for all learners.",
   alternates: {
     canonical: "https://fgstmails.com/education",
   },
   openGraph: {
-    title: "DailyNewzMail Education – Learning, Policy & Study Insights",
+    title: "Fgstmails Education – Learning, Policy & Study Insights",
     description:
       "Stay informed on education news, policy updates, study tips, and academic trends for all learners.",
     url: "https://fgstmails.com/education",
-    siteName: "DailyNewzMail",
+    siteName: "Fgstmails",
     images: [
       {
         url: "https://fgstmails.com/logo.png", // ✅ Replace with actual OG image
         width: 1200,
         height: 630,
-        alt: "DailyNewzMail Education",
+        alt: "Fgstmails Education",
       },
     ],
     locale: "en_US",
@@ -27,12 +27,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DailyNewzMail Education – Learning, Policy & Study Insights",
+    title: "Fgstmails Education – Learning, Policy & Study Insights",
     description:
       "Stay informed on education news, policy updates, study tips, and academic trends for all learners.",
     images: ["https://fgstmails.com/logo.png"], // ✅ Replace with actual image
-    site: "@dailynewzmail", // ✅ Use your real Twitter handle if available
-    creator: "@dailynewzmail",
+    site: "@Fgstmails", // ✅ Use your real Twitter handle if available
+    creator: "@Fgstmails",
   },
   icons: {
     icon: "/favicon.ico",

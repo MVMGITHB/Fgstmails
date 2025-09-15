@@ -2,24 +2,24 @@
 import NewsUi from "@/components/NewsCategory/NewsUi";
 
 export const metadata = {
-  title: "DailyNewzMail Travel – Destinations, Tips & Travel Guides",
+  title: "Fgstmails Travel – Destinations, Tips & Travel Guides",
   description:
     "Explore travel destinations, expert tips, itineraries and updates to fuel your next adventure.",
   alternates: {
     canonical: "https://fgstmails.com/travel",
   },
   openGraph: {
-    title: "DailyNewzMail Travel – Destinations, Tips & Travel Guides",
+    title: "Fgstmails Travel – Destinations, Tips & Travel Guides",
     description:
       "Explore travel destinations, expert tips, itineraries and updates to fuel your next adventure.",
     url: "https://fgstmails.com/travel",
-    siteName: "DailyNewzMail",
+    siteName: "Fgstmails",
     images: [
       {
         url: "https://fgstmails.com/logo.png", // ✅ Replace with actual OG image URL
         width: 1200,
         height: 630,
-        alt: "DailyNewzMail Travel",
+        alt: "Fgstmails Travel",
       },
     ],
     locale: "en_US",
@@ -27,12 +27,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DailyNewzMail Travel – Destinations, Tips & Travel Guides",
+    title: "Fgstmails Travel – Destinations, Tips & Travel Guides",
     description:
       "Explore travel destinations, expert tips, itineraries and updates to fuel your next adventure.",
     images: ["https://fgstmails.com/logo.png"], // ✅ Replace with actual image
-    site: "@dailynewzmail", // ✅ Use your real Twitter handle if available
-    creator: "@dailynewzmail",
+    site: "@Fgstmails", // ✅ Use your real Twitter handle if available
+    creator: "@Fgstmails",
   },
   icons: {
     icon: "/favicon.ico",

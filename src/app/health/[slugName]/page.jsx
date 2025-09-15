@@ -15,8 +15,8 @@ export async function generateMetadata({ params }) {
     const data = response.data;
 
     return {
-      title: data?.title || "dailynewzmail",
-      description: data?.subtitle || "Latest article from dailynewzmail",
+      title: data?.title || "Fgstmails",
+      description: data?.subtitle || "Latest article from Fgstmails",
       metadataBase: new URL("https://fgstmails.com"),
       alternates: {
         canonical: "./",
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
         description: data?.subtitle,
         url: `https://fgstmails.com/blog/${slugName}`,
         type: "article",
-        siteName: "dailynewzmail",
+        siteName: "Fgstmails",
         images: [
           {
             url: `${base_url}${data?.image}`,
@@ -46,8 +46,8 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error("SEO metadata error:", error);
     return {
-      title: "dailynewzmail",
-      description: "Latest news, blogs and stories from dailynewzmail.",
+      title: "Fgstmails",
+      description: "Latest news, blogs and stories from Fgstmails.",
     };
   }
 }
@@ -92,12 +92,12 @@ export default async function Page({ params }) {
       image: [`${base_url}${data1?.image}`],
       author: {
         "@type": "Organization",
-        name: "dailynewzmail",
+        name: "Fgstmails",
         url: "https://fgstmails.com",
       },
       publisher: {
         "@type": "Organization",
-        name: "dailynewzmail",
+        name: "Fgstmails",
         logo: {
           "@type": "ImageObject",
           url: "https://fgstmails.com/images/logo.png", // ✅ Replace with actual logo path
