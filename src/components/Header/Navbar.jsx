@@ -24,15 +24,17 @@ const Navbar = () => {
           </div> */}
           <div className="hidden sm:block">
             <Link href="/">
-              <span className="text-2xl sm:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#B00020] to-[#ff6f61] cursor-pointer">
-                Fgst<span className="text-[#B00020]">Mails</span>
-              </span>
+              <div className="w-[130px]">
+                <img src="/images/logo.webp" alt="" />
+              </div>
             </Link>
           </div>
 
           <div className="w-full flex justify-between items-center sm:hidden py-3">
             <Link href="/">
-              <span>FgstMails</span>
+               <div className="w-[100px]">
+                <img src="/images/logo.webp" alt="" />
+              </div>
             </Link>
             <button
               className="text-2xl text-[#B00020]"
@@ -92,6 +94,8 @@ const Navbar = () => {
               <button className="w-full px-4 py-2 bg-[#B00020] text-white rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
                 Subscribe
               </button> */}
+
+              
 
               {auth?.user ? (
                 <>
