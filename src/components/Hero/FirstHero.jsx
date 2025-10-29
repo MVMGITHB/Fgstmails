@@ -5,6 +5,7 @@ const FirstHero = ({news}) => {
  if (!news || !Array.isArray(news) || news.length === 0) {
     return <div>Loading...</div>; // or return null or a skeleton
   }
+//comment for testing;
 
   const firstArticle = news[0];
   const secondArticle=news[1];
