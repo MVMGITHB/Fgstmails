@@ -26,7 +26,8 @@ export const metadata = {
   title: "fgstmails",
   description: "Get Latest News and Updates",
   icons: {
-    icon: "/images/favicon.png", // path inside /public
+    // chnage images favicon to faviconlogo
+    icon: "/images/faviconlogo.png", // path inside /public
   },
 };
 
@@ -36,7 +37,8 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="icon"
-          href="/images/favicon.png"
+          //change favicon image "/images/faviconlogo.png"
+          href="/images/faviconlogo.png"
           type="image/x-icon"
           sizes="16x16"
         />
