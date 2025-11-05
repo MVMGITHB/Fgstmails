@@ -25,7 +25,7 @@ const Navbar = () => {
           <div className="hidden sm:block">
             <Link href="/">
               <div className="w-[130px]">
-                <img src="/images/logo.webp" alt="" />
+                <img src="/images/logo.webp" alt="company logo" />
               </div>
             </Link>
           </div>
