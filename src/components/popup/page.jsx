@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import base_url from "../helper/baseurl";
+
+import { base_url } from "../Helper/helper";
 
 export default function EVPopup({data}) {
   const [showPopup, setShowPopup] = useState(false);
   const pathname = usePathname();
 
-
+  console.log(data)
 
   // useEffect(() => {
   //   if (pathname === "/car/top5-ev-cars") {
@@ -51,7 +52,8 @@ export default function EVPopup({data}) {
           data?.images?.[0]?(<>
              
               <a
-            href={data?.link[0]}
+            href={data?.linkArray[0]}
+           
             target="_blank"
             rel="noopener noreferrer"
             className="block"
