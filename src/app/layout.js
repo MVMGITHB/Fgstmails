@@ -34,32 +34,31 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="icon"
-          //change favicon image "/images/faviconlogo.png"
-          href="/images/faviconlogo.png"
-          type="image/x-icon"
-          sizes="16x16"
-        />
+     <head>
+          <link
+    rel="icon"
+    href="/images/faviconlogo.png"
+    type="image/x-icon"
+    sizes="16x16"
+  />
 
-         <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id='G-T6XFEKGCEX"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', ''G-T6XFEKGCEX');
-          `,
-          }}
-        />
+  {/* ✅ Google Analytics - fixed version */}
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-T6XFEKGCEX"
+  ></script>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-T6XFEKGCEX');
+      `,
+    }}
+  />
+</head>
 
-
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased`}
       >
