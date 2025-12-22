@@ -1,4 +1,5 @@
 import Home from "@/components/Home/Home";
+import MainPopup from "@/components/popup/MainPopup";
 
 // ✅ Static SEO Metadata for fgstmails.com
 export const metadata = {
@@ -44,6 +45,7 @@ export default function Page() {
   return (
     <>
       <Home />
+      <MainPopup/>
     </>
   );
 }
