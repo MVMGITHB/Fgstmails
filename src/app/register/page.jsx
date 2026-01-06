@@ -1,10 +1,13 @@
-import Register from '@/components/Auth/Register'
-import React from 'react'
+import Register from "@/components/Auth/Register";
 
-const page = () => {
-  return (
-    <div><Register/></div>
-  )
+export const metadata = {
+  title: "Register",
+  description: "Create your FGS T Mails account and get started today.",
+  alternates: {
+    canonical: "https://fgstmails.com/register",
+  },
+};
+
+export default function Page() {
+  return <Register />;
 }
-
-export default page

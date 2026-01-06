@@ -1,9 +1,17 @@
-import Login from "@/components/Auth/Login"
+import Login from "@/components/Auth/Login";
 
-const page = () => {
-  return (
-    <div><Login/></div>
-  )
+export const metadata = {
+  title: "Login",
+  description: "Login to your FGS T Mails account securely.",
+  alternates: {
+    canonical: "https://fgstmails.com/login",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function Page() {
+  return <Login />;
 }
-
-export default page

@@ -1,11 +1,6 @@
-import Crousel from "./Crousel"
-
-
+import Crousel from "./Crousel";
 
 const Missed = () => {
-
-
-
   return (
     <div className="relative w-full px-4 md:px-8 py-6 mb-6">
       {/* Top Heading with Horizontal Lines and Vertical Edges */}
@@ -19,7 +14,7 @@ const Missed = () => {
 
         {/* Trending Text */}
         <h5 className="text-2xl font-bold text-[#B00023] text-center">
-         Our Recent Favorites
+          Our Recent Favorites
         </h5>
 
         {/* Right Horizontal Line */}
@@ -30,12 +25,11 @@ const Missed = () => {
         </div>
       </div>
 
-  <div className="max-w-8xl mx-auto">
-     <Crousel />
+      <div className="max-w-8xl mx-auto">
+        <Crousel />
+      </div>
     </div>
-      
-    </div>
-  )
-}
+  );
+};
 
-export default Missed
+export default Missed;
