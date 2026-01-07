@@ -5,6 +5,7 @@ const nextConfig = {
       "api.fgstmails.com",
       "66.116.198.221",
       "api.shopsmaart.com",
+      "api.dailynewzmail.com",
       "localhost",
     ],
   },
