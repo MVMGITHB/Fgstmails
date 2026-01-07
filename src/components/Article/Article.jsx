@@ -4,7 +4,7 @@ import EVPopup from "../popup/page";
 const Article = ({ data }) => {
   return (
     <div>
-      <EVPopup data={data}/>
+      {/* <EVPopup data={data}/> */}
       <ArticleHome data={data} />
     </div>
   );

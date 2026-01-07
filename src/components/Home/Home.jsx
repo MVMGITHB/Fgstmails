@@ -8,8 +8,7 @@ import Missed from "../HeroSection/Missed";
 import { base_url } from "../Helper/helper";
 import axios from "axios";
 import Image from "next/image"; // ✅ Import Next.js Image
-import BrandCarousel from "../Carousel/BrandCarousel";
-import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
+
 
 const Home = () => {
   const [news, setNews] = useState();
@@ -23,54 +22,9 @@ const Home = () => {
   useEffect(() => {
     fetchdata();
   }, []);
-  const bannerImages = [
+ 
 
-
-     {
-      src: "/banner/acko-horizontal-banner.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-    {
-      src: "/banner/acko-horizontal-banner-2.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-    {
-      src: "/banner/acko-horizontal-banner-3.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-   
-    // {
-    //   src: "/brandbanner/nike-horizontal-banner.png",
-    //   link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    // },
-    // {
-    //   src: "/brandbanner/redtape-horizontal-banner.png",
-    //   link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    // },
-  ];
-
-  const bannerImagesMobile = [
-    {
-      src: "/banner/mobile/A-HB.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-    {
-      src: "/banner/mobile/L-HB.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-    {
-      src: "/banner/mobile/M&S-HB.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-    {
-      src: "/banner/mobile/N-HB.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-    {
-      src: "/banner/mobile/RT-HB.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
-    },
-  ];
+  
 
   return (
     <>
@@ -110,6 +64,8 @@ const Home = () => {
               height={200}
             />
           </a>
+
+
           <TopPicks news={news} />
 
           {/* Three Horizontal Lines Below */}
