@@ -9,35 +9,26 @@ import { usePathname } from "next/navigation";
 export default function MainPopDynamic() {
   const [popup, setPopup] = useState(null);
   const [open, setOpen] = useState(false);
-
   const pathname = usePathname();
 
-  
+  // Fetch popup
   useEffect(() => {
     const getPopup = async () => {
       try {
-        // const res = await axios.get(
-        //   "http://localhost:5002/api/popup/getByWebsite/dailynews"
-        // );
-         const res = await axios.get(
+        const res = await axios.get(
           "https://api.shopsmaart.com/api/popup/getByWebsite/fgstmails"
         );
-
-        console.log("Popup API response:", res.data);
         setPopup(res.data);
       } catch (err) {
         console.error("Popup API error:", err);
       }
     };
-
     getPopup();
   }, []);
 
-  /* ===============================
-     OPEN POPUP AFTER 5 SECONDS
-  =============================== */
+  // Open popup after delay
   useEffect(() => {
-    if (!popup) return; // wait until popup data is loaded
+    if (!popup) return;
 
     const timer = setTimeout(() => {
       if (pathname !== "/") {
@@ -48,37 +39,29 @@ export default function MainPopDynamic() {
     return () => clearTimeout(timer);
   }, [popup, pathname]);
 
-  /* ===============================
-     DEBUG LOG (OPTIONAL)
-  =============================== */
-  useEffect(() => {
-    console.log("Popup state updated:", popup);
-  }, [popup]);
-
-  /* ===============================
-     STOP RENDER
-  =============================== */
+  // 🔴 IMPORTANT: Completely remove popup when closed
   if (!popup || !open) return null;
 
-  /* ===============================
-     UI
-  =============================== */
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] p-4 animate-fadeIn">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-xl relative overflow-hidden">
+    <div
+      className="fixed inset-0 flex items-center justify-center z-[9999] p-4 animate-fadeIn
+                 bg-black/40 backdrop-blur-sm pointer-events-auto"
+    >
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-xl relative overflow-hidden pointer-events-auto">
 
-        
+        {/* CLOSE */}
         <button
           onClick={() => setOpen(false)}
-          className="absolute top-3 right-3 bg-black/70 text-white rounded-full px-2 py-1 text-sm hover:bg-black"
+          className="absolute top-3 right-3 bg-black/70 text-white rounded-full px-2 py-1 text-sm hover:bg-black z-10"
         >
           ✕
         </button>
 
-       
+        {/* IMAGE */}
         <Link
           href={popup?.linkArray?.[0] || "#"}
           target="_blank"
+          className="block"
         >
           <Image
             src={`https://api.shopsmaart.com${popup?.images?.[0]}`}
@@ -91,22 +74,14 @@ export default function MainPopDynamic() {
         </Link>
       </div>
 
-      {/* ANIMATION */}
       <style>
         {`
           .animate-fadeIn {
             animation: fadeIn 0.4s ease-out;
           }
-
           @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: scale(0.95);
-            }
-            to {
-              opacity: 1;
-              transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
           }
         `}
       </style>

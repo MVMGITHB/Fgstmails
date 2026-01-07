@@ -184,7 +184,7 @@ useEffect(() => {
         />
       )}
 
-        <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
+          <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
             <BrandCarousel items={bannersData} />
           </div>
 
