@@ -43,8 +43,14 @@ useEffect(() => {
     try {
       const res = await axios.get("https://api.dailynewzmail.com/api/ads/getAdsByWebsite/fgstmails");
 
+
+
+      console.log("Ads Banners API response:", res.data);
+
       const ads = res.data?.data?.[0];
       if (!ads) return;
+
+      console.log("Ads API response data:", ads);
 
       const baseImageUrl = "https://api.dailynewzmail.com"
 
@@ -54,11 +60,15 @@ useEffect(() => {
         link: ads.linkArray?.[0] || "#",
       }));
 
+      console.log("Main Banners:", mainBanners);
+
      
       const sideBanners = ads.sideImages.map((img) => ({
         src: baseImageUrl + img,
         link: ads.sideLinkArray?.[0] || "#",
       }));
+
+      console.log("Side Banners:", sideBanners);
 
       setBannersData(mainBanners);
       setSideBannersData(sideBanners);
