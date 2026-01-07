@@ -41,20 +41,20 @@ export const ArticleHome = ({ data }) => {
 useEffect(() => {
   const getAdsBanners = async () => {
     try {
-      const res = await axios.get("https://api.dailynewzmail.com/api/ads/getAdsByWebsite/dailynews");
+      const res = await axios.get("https://api.dailynewzmail.com/api/ads/getAdsByWebsite/fgstmails");
 
       const ads = res.data?.data?.[0];
       if (!ads) return;
 
       const baseImageUrl = "https://api.dailynewzmail.com"
 
-      // MAIN BANNERS
+      
       const mainBanners = ads.images.map((img) => ({
         src: baseImageUrl + img,
         link: ads.linkArray?.[0] || "#",
       }));
 
-      // SIDE / MOBILE BANNERS
+     
       const sideBanners = ads.sideImages.map((img) => ({
         src: baseImageUrl + img,
         link: ads.sideLinkArray?.[0] || "#",
