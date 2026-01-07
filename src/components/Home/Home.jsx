@@ -74,9 +74,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="hidden md:block max-w-[1500px] mx-auto p-4">
+      {/* <div className="hidden md:block max-w-[1500px] mx-auto p-4">
         <BrandCarousel items={bannerImages} />
-      </div>
+      </div> */}
 
       {/* Mobile */}
       {/* <div className="block md:hidden max-w-[1500px] mx-auto p-4">
