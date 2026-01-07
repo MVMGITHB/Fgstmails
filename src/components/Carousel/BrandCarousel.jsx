@@ -44,7 +44,7 @@ export default function BrandCarousel({ items = [] }) {
         {items.map((item, index) => (
           <Link
             key={index}
-            href={item.link}
+            href={item?.link}
             target="_blank"
             rel="noopener noreferrer"
             className="relative min-w-full h-full block"
