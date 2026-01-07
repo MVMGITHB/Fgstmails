@@ -8,6 +8,7 @@ function LatestNews({ news }) {
         Latest News
       </span>
 
+      
       <div className="relative ml-6">
         <div className="absolute top-0 left-1.5 w-px h-full bg-gray-300 z-0"></div>
 

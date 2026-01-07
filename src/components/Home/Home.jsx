@@ -8,6 +8,8 @@ import Missed from "../HeroSection/Missed";
 import { base_url } from "../Helper/helper";
 import axios from "axios";
 import Image from "next/image"; // ✅ Import Next.js Image
+import BrandCarousel from "../Carousel/BrandCarousel";
+import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
 
 const Home = () => {
   const [news, setNews] = useState();
@@ -21,10 +23,67 @@ const Home = () => {
   useEffect(() => {
     fetchdata();
   }, []);
+  const bannerImages = [
+
+
+     {
+      src: "/banner/acko-horizontal-banner.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/acko-horizontal-banner-2.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/acko-horizontal-banner-3.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+   
+    // {
+    //   src: "/brandbanner/nike-horizontal-banner.png",
+    //   link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    // },
+    // {
+    //   src: "/brandbanner/redtape-horizontal-banner.png",
+    //   link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    // },
+  ];
+
+  const bannerImagesMobile = [
+    {
+      src: "/banner/mobile/A-HB.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/mobile/L-HB.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/mobile/M&S-HB.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/mobile/N-HB.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/mobile/RT-HB.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+  ];
 
   return (
     <>
-      <div className="w-full mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="hidden md:block max-w-[1500px] mx-auto p-4">
+        <BrandCarousel items={bannerImages} />
+      </div>
+
+      {/* Mobile */}
+      {/* <div className="block md:hidden max-w-[1500px] mx-auto p-4">
+        <MobileBrandCrousel items={bannerImagesMobile} />
+      </div> */}
+
+      <div className="w-full mx-auto px-4 pb-6 grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Left - Top Picks */}
 
         <div className="md:col-span-1">
@@ -81,6 +140,7 @@ const Home = () => {
               className="mt-4 rounded"
             />
           </a> */}
+
           <a
             href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
             target="_blank"

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { base_url } from "../Helper/helper";
+import BrandCarousel from "../Carousel/BrandCarousel";
+import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
 
 const FirstHero = ({news}) => {
  if (!news || !Array.isArray(news) || news.length === 0) {
@@ -12,8 +14,29 @@ const FirstHero = ({news}) => {
   const thirdArticle=news[2];
   const fourthArticle=news[3];
 
+
+   const bannerImages = [
+    { src: "/brandbanner/adidas-horizontal-banner.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/levis-horizontal-banner.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/M&S-horizontal-banner.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/nike-horizontal-banner.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/redtape-horizontal-banner.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  ];
+
+   const bannerImagesMobile = [
+    { src: "/brandbanner/mobile/A-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/mobile/L-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/mobile/M&S-HB.png", link:"https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/mobile/N-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+    { src: "/brandbanner/mobile/RT-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  ];
+
   return (
     <div className="max-w-4xl mx-auto px-2  py-6">
+
+
+
+       
       {/* Vertical borders on left and right */}
       <div className="border-l border-r border-gray-300 p-4">
 

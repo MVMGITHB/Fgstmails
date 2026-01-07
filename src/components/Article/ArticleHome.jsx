@@ -7,9 +7,13 @@ import Missed from "../HeroSection/Missed";
 import axios from "axios";
 import TopPicks from "../Hero/TopPicks";
 import Image from "next/image";
+import BrandCarousel from "../Carousel/BrandCarousel";
+import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
 
 export const ArticleHome = ({ data }) => {
   const [news, setNews] = useState();
+  const [bannersData, setBannersData] = useState([]);
+  const [sideBannersData, setSideBannersData] = useState([]);
 
   const fetchdata = async () => {
     try {
@@ -30,6 +34,43 @@ export const ArticleHome = ({ data }) => {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = String(date.getFullYear()).slice(-2);
   const formattedDate = `${day}/${month}/${year}`;
+
+
+
+  
+useEffect(() => {
+  const getAdsBanners = async () => {
+    try {
+      const res = await axios.get(`${base_url}/api/ads`);
+
+      const ads = res.data?.data?.[0];
+      if (!ads) return;
+
+      const baseImageUrl = "https://api.dailynewzmail.com"
+
+      // MAIN BANNERS
+      const mainBanners = ads.images.map((img) => ({
+        src: baseImageUrl + img,
+        link: ads.linkArray?.[0] || "#",
+      }));
+
+      // SIDE / MOBILE BANNERS
+      const sideBanners = ads.sideImages.map((img) => ({
+        src: baseImageUrl + img,
+        link: ads.sideLinkArray?.[0] || "#",
+      }));
+
+      setBannersData(mainBanners);
+      setSideBannersData(sideBanners);
+    } catch (err) {
+      console.error("Banners API error:", err);
+    }
+  };
+
+  getAdsBanners();
+}, []);
+
+
 
   const jsonLd = {
     "@context": "https://schema.org/",
@@ -84,10 +125,39 @@ export const ArticleHome = ({ data }) => {
       name: "MVM Business Service",
     },
   };
+
+
+
+
+   const bannerImages = [
+    {
+      src: "/banner/acko-horizontal-banner.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/acko-horizontal-banner-2.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+    {
+      src: "/banner/acko-horizontal-banner-3.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=",
+    },
+  ]
+
+  //  const bannerImagesMobile = [
+  //   { src: "/brandbanner/mobile/A-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/L-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/M&S-HB.png", link:"https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/N-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/RT-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  // ];
   // ----------------- ✅ SCHEMA LOGIC END -----------------
 
   return (
-    <div className="w-full py-6 bg-gray-50">
+    <div className="w-full  bg-gray-50">
+
+
+     
       {/* ✅ Structured Data Scripts */}
       <script
         type="application/ld+json"
@@ -103,6 +173,15 @@ export const ArticleHome = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+
+        <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
+            <BrandCarousel items={bannersData} />
+          </div>
+
+          {/* Mobile */}
+          <div className="block md:hidden max-w-[1500px] mx-auto p-4">
+            <MobileBrandCrousel items={sideBannersData} />
+          </div>
 
       {/* Mobile Ad (Top)
       <div className="md:hidden w-full mb-4 px-4">
