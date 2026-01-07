@@ -4,7 +4,6 @@ import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Header/Footer";
 import { AuthProvider } from "@/components/context/auth";
 import BreadcrumbSchema from "@/components/Seo/breadcrumb";
-import FgstmailsPopup from "@/components/popup/registerpopup";
 import Breadcrumb from "@/components/Breadcrumb/BreadCrumbVisible";
 import MainPopDynamic from "@/components/popup/MainPopDynamic";
 

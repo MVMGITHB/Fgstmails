@@ -67,7 +67,7 @@ export default function MainPopDynamic() {
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] p-4 animate-fadeIn">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-xl relative overflow-hidden">
 
-        {/* CLOSE BUTTON */}
+        
         <button
           onClick={() => setOpen(false)}
           className="absolute top-3 right-3 bg-black/70 text-white rounded-full px-2 py-1 text-sm hover:bg-black"
@@ -75,7 +75,7 @@ export default function MainPopDynamic() {
           ✕
         </button>
 
-        {/* POPUP IMAGE */}
+       
         <Link
           href={popup?.linkArray?.[0] || "#"}
           target="_blank"
