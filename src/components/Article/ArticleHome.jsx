@@ -47,7 +47,7 @@ useEffect(() => {
 
       console.log("Ads Banners API response:", res.data);
 
-      const ads = res.data?.data?.[0];
+      const ads = res.data;
       if (!ads) return;
 
       console.log("Ads API response data:", ads);
