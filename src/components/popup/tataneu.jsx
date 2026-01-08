@@ -25,30 +25,31 @@ export default function TataPopup({ link, desImg, mobIg }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-2">
-      <div className="relative min-w-[65%] flex justify-center rounded-2xl overflow-hidden">
-        {showClose && (
-          <button
-            onClick={() => setVisible(false)}
-            className="absolute cursor-pointer top-3 right-10 z-20 bg-white/80 hover:bg-white rounded-full p-1 transition"
-          >
-            <X size={20} className="text-black" />
-          </button>
-        )}
+    // <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-2">
+    //   <div className="relative min-w-[65%] flex justify-center rounded-2xl overflow-hidden">
+    //     {showClose && (
+    //       <button
+    //         onClick={() => setVisible(false)}
+    //         className="absolute cursor-pointer top-3 right-10 z-20 bg-white/80 hover:bg-white rounded-full p-1 transition"
+    //       >
+    //         <X size={20} className="text-black" />
+    //       </button>
+    //     )}
 
-        <Link href={link} target="_blank" onClick={handleLinkClick}>
-          <img
-            src={desImg}
-            alt="Popup"
-            className="hidden md:block h-auto max-h-[60vh] object-contain rounded-2xl"
-          />
-          <img
-            src={mobIg}
-            alt="Popup"
-            className="md:hidden h-auto max-h-[60vh] object-contain rounded-2xl"
-          />
-        </Link>
-      </div>
-    </div>
+    //     <Link href={link} target="_blank" onClick={handleLinkClick}>
+    //       <img
+    //         src={desImg}
+    //         alt="Popup"
+    //         className="hidden md:block h-auto max-h-[60vh] object-contain rounded-2xl"
+    //       />
+    //       <img
+    //         src={mobIg}
+    //         alt="Popup"
+    //         className="md:hidden h-auto max-h-[60vh] object-contain rounded-2xl"
+    //       />
+    //     </Link>
+    //   </div>
+    // </div>
+    <></>
   );
 }

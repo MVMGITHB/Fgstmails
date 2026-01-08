@@ -11,22 +11,21 @@ export default function MainPopDynamic() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  // Fetch popup
   useEffect(() => {
     const getPopup = async () => {
       try {
         const res = await axios.get(
           "https://api.shopsmaart.com/api/popup/getByWebsite/fgstmails"
         );
+
         setPopup(res.data);
       } catch (err) {
         console.error("Popup API error:", err);
       }
-    };
+    }; 
     getPopup();
   }, []);
 
-  // Open popup after delay
   useEffect(() => {
     if (!popup) return;
 
@@ -39,17 +38,19 @@ export default function MainPopDynamic() {
     return () => clearTimeout(timer);
   }, [popup, pathname]);
 
-  // 🔴 IMPORTANT: Completely remove popup when closed
+  
   if (!popup || !open) return null;
 
   return (
     <div
       className="fixed inset-0 flex items-center justify-center z-[9999] p-4 animate-fadeIn
-                 bg-black/40 backdrop-blur-sm pointer-events-auto"
+       bg-black/40 backdrop-blur-sm pointer-events-auto"
     >
+
+
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-xl relative overflow-hidden pointer-events-auto">
 
-        {/* CLOSE */}
+       
         <button
           onClick={() => setOpen(false)}
           className="absolute top-3 right-3 bg-black/70 text-white rounded-full px-2 py-1 text-sm hover:bg-black z-10"
@@ -57,7 +58,9 @@ export default function MainPopDynamic() {
           ✕
         </button>
 
-        {/* IMAGE */}
+
+
+       
         <Link
           href={popup?.linkArray?.[0] || "#"}
           target="_blank"
