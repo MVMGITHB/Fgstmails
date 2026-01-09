@@ -6,6 +6,8 @@ import { AuthProvider } from "@/components/context/auth";
 import BreadcrumbSchema from "@/components/Seo/breadcrumb";
 import Breadcrumb from "@/components/Breadcrumb/BreadCrumbVisible";
 import MainPopDynamic from "@/components/popup/MainPopDynamic";
+import MainPopup from "@/components/popup/MainPopup";
+import NewPopup from "@/components/popup/NewPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,7 +75,9 @@ export default function RootLayout({ children }) {
             <main className="flex-grow">{children}</main>
             {/* popup components */}
             {/* <MainPopup /> */}
-            <MainPopDynamic/>
+            {/* <MainPopDynamic/> */}
+
+            <NewPopup/>
 
             
             <Footer />
