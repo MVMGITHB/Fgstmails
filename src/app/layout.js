@@ -75,9 +75,9 @@ export default function RootLayout({ children }) {
             <main className="flex-grow">{children}</main>
             {/* popup components */}
             {/* <MainPopup /> */}
-            {/* <MainPopDynamic/> */}
+            <MainPopDynamic/>
 
-            <NewPopup/>
+            {/* <NewPopup/> */}
 
             
             <Footer />
