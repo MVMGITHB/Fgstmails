@@ -47,7 +47,7 @@ export default function NewPopup() {
   }, [popup]);
 
   // Do not render if popup is closed or data missing
-  if (!open || !popup) return null;
+  if (!open ) return null;
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[9999] p-4 animate-fadeIn">
@@ -63,12 +63,12 @@ export default function NewPopup() {
 
         {/* Popup Image */}
         <Link
-          href={popup.linkArray[0]}
+          href={popup?.linkArray[0]}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
-            src={`https://api.shopsmaart.com${popup.images[0]}`}
+            src={`https://api.shopsmaart.com${popup?.images[0]}`}
             alt="Popup Banner"
             width={900}
             height={900}
