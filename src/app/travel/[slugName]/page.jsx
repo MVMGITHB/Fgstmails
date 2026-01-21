@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: data?.title,
         description: data?.subtitle,
-        url: `https://fgstmails.com/blog/${slugName}`,
+        url: `https://fgstmails.com/travel/${slugName}`,
         type: "article",
         siteName: "Fgstmails",
         images: [

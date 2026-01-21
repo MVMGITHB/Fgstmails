@@ -1,3 +1,5 @@
+import { base_url } from "@/components/Helper/helper";
+import FirstHero from "@/components/Hero/FirstHero";
 import Home from "@/components/Home/Home";
 import MainPopup from "@/components/popup/MainPopup";
 
@@ -41,11 +43,26 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+ 
+    const res = await fetch(`${base_url}/api/blog/getAllBlog`, {
+      cache: "no-store", // always fresh data
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch news");
+    }
+
+    const news = await res.json();
+
+    console.log("News data in page.js:", news);
+
   return (
     <>
-      <Home />
-     
+      <Home news={news} />
+      {/* <div className="md:col-span-2">
+          <FirstHero news={news} />
+        </div> */}
     </>
   );
 }
