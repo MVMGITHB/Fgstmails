@@ -20,7 +20,7 @@ export default function MainPopDynamic() {
 
         setPopup(res.data);
       } catch (err) {
-        console.error("Popup API error:", err);
+        // console.error("Popup API error:", err);
       }
     }; 
     getPopup();

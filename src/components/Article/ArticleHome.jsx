@@ -20,7 +20,7 @@ export const ArticleHome = ({ data }) => {
       const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
       setNews(res.data);
     } catch (error) {
-      console.error("Error fetching news:", error);
+      // console.error("Error fetching news:", error);
     }
   };
 
@@ -45,12 +45,12 @@ useEffect(() => {
 
 
 
-      console.log("Ads Banners API response:", res.data);
+      // console.log("Ads Banners API response:", res.data);
 
       const ads = res.data;
       if (!ads) return;
 
-      console.log("Ads API response data:", ads);
+      // console.log("Ads API response data:", ads);
 
       const baseImageUrl = "https://api.dailynewzmail.com"
 
@@ -60,7 +60,7 @@ useEffect(() => {
         link: ads.linkArray?.[0] || "#",
       }));
 
-      console.log("Main Banners:", mainBanners);
+      // console.log("Main Banners:", mainBanners);
 
      
       const sideBanners = ads.sideImages.map((img) => ({
@@ -68,12 +68,12 @@ useEffect(() => {
         link: ads.sideLinkArray?.[0] || "#",
       }));
 
-      console.log("Side Banners:", sideBanners);
+      // console.log("Side Banners:", sideBanners);
 
       setBannersData(mainBanners);
       setSideBannersData(sideBanners);
     } catch (err) {
-      console.error("Banners API error:", err);
+      // console.error("Banners API error:", err);
     }
   };
 

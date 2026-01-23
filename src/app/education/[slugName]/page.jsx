@@ -13,13 +13,13 @@ export async function generateMetadata({ params }) {
       `${base_url}/api/blog/getOneBlogByslug/${slugName}`
     );
     const data = response.data;
-
+    // console.log("SEO metadata data:", data);
     return {
       title: data?.title || "Fgstmails",
       description: data?.subtitle || "Latest article from Fgstmails",
       metadataBase: new URL("https://fgstmails.com"),
       alternates: {
-        canonical: "./",
+        canonical: `https://fgstmails.com/education/${slugName}`,
       },
       openGraph: {
         title: data?.title,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
       },
     };
   } catch (error) {
-    console.error("SEO metadata error:", error);
+    // console.error("SEO metadata error:", error);
     return {
       title: "Fgstmails",
       description: "Latest news, blogs and stories from Fgstmails.",

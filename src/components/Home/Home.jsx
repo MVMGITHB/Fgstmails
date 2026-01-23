@@ -19,7 +19,7 @@ async function getNews() {
 
     return res.json();
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return null;
   }
 }

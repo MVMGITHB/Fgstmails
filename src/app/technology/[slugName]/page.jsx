@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
       description: data?.subtitle || "Latest article from Fgstmails",
       metadataBase: new URL("https://fgstmails.com"),
       alternates: {
-        canonical: "./",
+        canonical: `https://fgstmails.com/technology/${slugName}`,
       },
       openGraph: {
         title: data?.title,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
       },
     };
   } catch (error) {
-    console.error("SEO metadata error:", error);
+    // console.error("SEO metadata error:", error);
     return {
       title: "Fgstmails",
       description: "Latest news, blogs and stories from Fgstmails.",
@@ -125,7 +125,7 @@ export default async function Page({ params }) {
       </>
     );
   } catch (error) {
-    console.error("Error fetching article:", error);
+    // console.error("Error fetching article:", error);
     return <div>Failed to load article.</div>;
   }
 }

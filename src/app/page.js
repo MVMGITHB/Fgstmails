@@ -55,7 +55,7 @@ export default async function Page() {
 
     const news = await res.json();
 
-    console.log("News data in page.js:", news);
+    // console.log("News data in page.js:", news);
 
   return (
     <>

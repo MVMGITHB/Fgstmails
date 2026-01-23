@@ -28,7 +28,7 @@ export default function NewPopup() {
           setPopup(res.data);
         }
       } catch (err) {
-        console.error("Popup API error:", err);
+        // console.error("Popup API error:", err);
       }
     };
 
