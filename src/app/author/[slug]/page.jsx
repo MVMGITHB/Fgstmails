@@ -9,7 +9,7 @@ import { base_url } from "@/components/Helper/helper";
 
  
 export async function generateMetadata({ params }) {
-  console.log("Params in author slug metadata:", params);
+  // console.log("Params in author slug metadata:", params);
   const slug = params.slug;
   const baseUrl = "https://fgstmails.com";
  

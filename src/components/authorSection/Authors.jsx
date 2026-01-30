@@ -3,15 +3,17 @@ import axios from "axios";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { base_url } from "../Helper/helper";
+import { base_url, base_url1 } from "../Helper/helper";
 
 const Authors = () => {
   const [authors, setAuthors] = useState([]);
 
   const fetchAuthors = async () => {
     try {
-      const response = await axios.get(`${base_url}/api/auth/getAllAdmin`);
-      console.log("authors",response.data?.users )
+      const response = await axios.get(`${base_url}/api/auth/getAllAdmins`);
+
+
+      // console.log("authors",response)
   
       setAuthors(response.data?.users || []);
     } catch (err) {

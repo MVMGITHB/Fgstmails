@@ -16,7 +16,7 @@ export const metadata = {
     title: "Our Authors – fgstmails",
     description:
       "Get to know the expert authors behind fgstmails delivering trusted job updates and career guidance.",
-    url: "https://fgstmails.com/authors",
+    url: "https://fgstmails.com/author",
     siteName: "fgstmails",
     type: "website",
     images: [

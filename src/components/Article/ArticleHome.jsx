@@ -12,7 +12,7 @@ import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
 import Link from "next/link";
 
 export const ArticleHome = ({ data }) => {
-  console.log("Article Home Data:", data);
+  // console.log("Article Home Data:", data);
   const [news, setNews] = useState();
   const [bannersData, setBannersData] = useState([]);
   const [sideBannersData, setSideBannersData] = useState([]);
