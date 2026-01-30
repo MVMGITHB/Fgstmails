@@ -63,9 +63,10 @@ const Register = () => {
         <h1 className="text-2xl font-bold mb-4 text-[#1e0e4b] text-center">
           Get updated to <span className="text-[#7747ff]">Daily News</span>
         </h1>
-         <h1 className="text-1xl font-bold mb-4 text-[#1e0e4b] text-center">
+        {/* change h1 to h2  */}
+         <h2 className="text-1xl font-bold mb-4 text-[#1e0e4b] text-center">
           Register Here
-        </h1>
+        </h2>
 
 
         {errorMsg && (

@@ -128,4 +128,7 @@ export default async function Page({ params }) {
     // console.error("Error fetching article:", error);
     return <div>Failed to load article.</div>;
   }
+
+
+  
 }

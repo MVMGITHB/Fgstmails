@@ -9,8 +9,10 @@ import TopPicks from "../Hero/TopPicks";
 import Image from "next/image";
 import BrandCarousel from "../Carousel/BrandCarousel";
 import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
+import Link from "next/link";
 
 export const ArticleHome = ({ data }) => {
+  console.log("Article Home Data:", data);
   const [news, setNews] = useState();
   const [bannersData, setBannersData] = useState([]);
   const [sideBannersData, setSideBannersData] = useState([]);
@@ -163,6 +165,9 @@ useEffect(() => {
   // ];
   // ----------------- ✅ SCHEMA LOGIC END -----------------
 
+console.log(data?.content);
+
+
   return (
     <div className="w-full  bg-gray-50">
 
@@ -229,9 +234,9 @@ useEffect(() => {
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug">
             {data?.title}
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-600 font-medium italic">
+          {/* <h2 className="text-xl md:text-2xl text-gray-600 font-medium italic">
             “{data?.subtitle}”
-          </h2>
+          </h2> */}
 
           <div className="relative w-full h-[300px] md:h-[400px]">
             <Image
@@ -245,18 +250,33 @@ useEffect(() => {
             />
           </div>
 
-          <div className="text-sm bg-gray-200 text-gray-700 px-4 py-2 w-fit rounded">
-            <span className="text-[#B00020] font-semibold">Updated – </span>
-            {new Intl.DateTimeFormat("en-GB", {
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: true,
-              timeZone: "Asia/Kolkata",
-            }).format(new Date(data?.createdAt))}
-          </div>
+         <div className="text-sm bg-gray-200 text-gray-700 px-4 py-2 w-fit rounded flex items-center gap-3">
+  <span className="text-[#B00020] font-semibold">Updated – </span>
+
+  {new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Kolkata",
+  }).format(new Date(data?.createdAt))}
+
+  <span>Author:</span>
+
+  <strong>
+    <Link
+      href={`/author/${data?.author?.slug}`}
+      rel="noopener noreferrer"
+      title={`Read more articles by ${data?.author?.name}`}
+      className="text-blue-600"
+    >
+      {data?.author?.name}
+    </Link>
+  </strong>
+</div>
+
 
           <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
             {typeof data?.content === "string" && (

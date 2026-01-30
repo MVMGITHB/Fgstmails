@@ -55,9 +55,9 @@ const FirstHero = ({news}) => {
           <h1 className="text-4xl font-bold hover:underline cursor-pointer mb-2">
            {firstArticle?.title}
           </h1>
-           <h2 className="text-md hover:underline cursor-pointer mb-2">
+           {/* <h2 className="text-md hover:underline cursor-pointer mb-2">
            {firstArticle.subtitle}
-          </h2>
+          </h2> */}
           </Link>
          
           <p className="text-xs underline uppercase font-bold text-gray-600">

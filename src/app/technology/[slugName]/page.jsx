@@ -75,7 +75,7 @@ export default async function Page({ params }) {
           "@type": "ListItem",
           position: 2,
           name: data1?.title,
-          item: `https://fgstmails.com/blog/${slugName}`,
+          item: `https://fgstmails.com/technology/${slugName}`,
         },
       ],
     };
@@ -85,7 +85,7 @@ export default async function Page({ params }) {
       "@type": "Article",
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `https://fgstmails.com/blog/${slugName}`,
+        "@id": `https://fgstmails.com/technology/${slugName}`,
       },
       headline: data1?.title,
       description: data1?.subtitle,

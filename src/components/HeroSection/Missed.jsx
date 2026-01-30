@@ -13,9 +13,9 @@ const Missed = () => {
         </div>
 
         {/* Trending Text */}
-        <h5 className="text-2xl font-bold text-[#B00023] text-center">
+        <h2 className="text-2xl font-bold text-[#B00023] text-center">
           Our Recent Favorites
-        </h5>
+        </h2>
 
         {/* Right Horizontal Line */}
         <div className="flex items-center gap-1">
