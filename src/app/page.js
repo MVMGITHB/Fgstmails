@@ -44,21 +44,41 @@ export const metadata = {
 };
 
 export default async function Page() {
- 
-    const res = await fetch(`${base_url}/api/blog/getAllBlog`, {
-      cache: "no-store", // always fresh data
-    });
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "FgstMail",
+    url: "https://fgstmails.com/",
+    logo: "https://fgstmails.com/images/logo2.png",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        email: "contact@fgstmails.com",
+        contactType: "customer service",
+        areaServed: "INDIA",
+        availableLanguage: ["English", "Hindi"],
+      },
+    ],
+  };
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch news");
-    }
+  const res = await fetch(`${base_url}/api/blog/getAllBlog`, {
+    cache: "no-store", // always fresh data
+  });
 
-    const news = await res.json();
+  if (!res.ok) {
+    throw new Error("Failed to fetch news");
+  }
 
-    // console.log("News data in page.js:", news);
+  const news = await res.json();
+
+  // console.log("News data in page.js:", news);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <Home news={news} />
       {/* <div className="md:col-span-2">
           <FirstHero news={news} />
