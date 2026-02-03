@@ -16,14 +16,14 @@ export async function generateMetadata({ params }) {
 
     return {
       title: data?.title || "Fgstmails",
-      description: data?.subtitle || "Latest article from Fgstmails",
+      description: data?.mdesc || "Latest article from Fgstmails",
       metadataBase: new URL("https://fgstmails.com"),
       alternates: {
         canonical: `https://fgstmails.com/technology/${slugName}`,
       },
       openGraph: {
         title: data?.title,
-        description: data?.subtitle,
+        description: data?.mdesc,
         url: `https://fgstmails.com/technology/${slugName}`,
         type: "article",   
         siteName: "Fgstmails",
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
       twitter: {
         card: "summary_large_image",
         title: data?.title,
-        description: data?.subtitle,
+        description: data?.mdesc,
         images: [`${base_url}${data?.image}`],
       },
     };
@@ -88,7 +88,7 @@ export default async function Page({ params }) {
         "@id": `https://fgstmails.com/technology/${slugName}`,
       },
       headline: data1?.title,
-      description: data1?.subtitle,
+      description: data1?.mdesc,
       image: [`${base_url}${data1?.image}`],
       author: {
         "@type": "Organization",
