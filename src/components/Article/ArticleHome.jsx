@@ -111,6 +111,34 @@ useEffect(() => {
     datePublished: formattedDate,
   };
 
+  // const faqSchema = {
+  //   "@context": "https://schema.org",
+  //   "@type": "FAQPage",
+  //   mainEntity: data?.faqs?.map((faq) => ({
+  //     "@type": "Question",
+  //     name: faq.ques,
+  //     acceptedAnswer: {
+  //       "@type": "Answer",
+  //       text: faq.ans,
+  //     },
+  //   })),
+  // };
+
+  // const authorSchema = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Person",
+  //   name: `${data?.author?.name}`,
+  //   url: "https://example.com/about",
+  //   image: `${base_url}${data?.author?.image}`,
+  //   sameAs: ["https://twitter.com/johndoe", "https://linkedin.com/in/johndoe"],
+  //   jobTitle: "Content Writer",
+  //   worksFor: {
+  //     "@type": "Organization",
+  //     name: "MVM Business Service",
+  //   },
+  // };
+
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -126,19 +154,25 @@ useEffect(() => {
 
   const authorSchema = {
     "@context": "https://schema.org",
+
     "@type": "Person",
+
     name: `${data?.author?.name}`,
-    url: "https://example.com/about",
+
+    url: "https://fgstmails.com/author",
+
     image: `${base_url}${data?.author?.image}`,
+
     sameAs: ["https://twitter.com/johndoe", "https://linkedin.com/in/johndoe"],
+
     jobTitle: "Content Writer",
+
     worksFor: {
       "@type": "Organization",
+
       name: "MVM Business Service",
     },
   };
-
-
 
 
    const bannerImages = [
@@ -165,7 +199,7 @@ useEffect(() => {
   // ];
   // ----------------- ✅ SCHEMA LOGIC END -----------------
 
-console.log(data?.content);
+// console.log(data?.content);
 
 
   return (

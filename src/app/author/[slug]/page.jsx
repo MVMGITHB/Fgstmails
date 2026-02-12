@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
         title: "Author Not Found | Jobkityaari",
         description: "No author information available at the moment.",
         alternates: {
-          canonical: `${baseUrl}/author/${slug}`,
+          // canonical: `${baseUrl}/author/${slug}`,
         },
       };
     }

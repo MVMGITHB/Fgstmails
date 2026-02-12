@@ -1,24 +1,29 @@
 import Article from "@/components/Article/Article";
 import { base_url } from "@/components/Helper/helper";
-import axios from "axios";
 import Script from "next/script";
 
 const Base_url = "https://fgstmails.com/";
 
+async function getArticle(slug) {
+  const res = await fetch(
+    `${base_url}/api/blog/getOneBlogByslug/${slug}`,
+    {
+      // choose one depending on your needs:
+      cache: "no-store",        // always fresh
+      // next: { revalidate: 60 } // or ISR caching
+    }
+  );
+
+  if (!res.ok) throw new Error("Fetch failed");
+
+  return res.json();
+}
+
 export async function generateMetadata({ params }) {
-  const { slugName } = await params;
-
-
-
+  const { slugName } = params;
 
   try {
-    const response = await axios.get(
-      `${base_url}/api/blog/getOneBlogByslug/${slugName}`
-    );
-    const data = response.data;
-
-
-    console.lo
+    const data = await getArticle(slugName);
 
     return {
       title: data?.title || "Fgstmails",
@@ -49,8 +54,7 @@ export async function generateMetadata({ params }) {
         images: [`${base_url}${data?.image}`],
       },
     };
-  } catch (error) {
-    // console.error("SEO metadata error:", error);
+  } catch {
     return {
       title: "Fgstmails",
       description: "Latest news, blogs and stories from Fgstmails.",
@@ -59,13 +63,10 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const { slugName } = await params;
+  const { slugName } = params;
 
   try {
-    const response = await axios.get(
-      `${base_url}/api/blog/getOneBlogByslug/${slugName}`
-    );
-    const data1 = response.data;
+    const data = await getArticle(slugName);
 
     const breadcrumbSchema = {
       "@context": "https://schema.org",
@@ -80,7 +81,7 @@ export default async function Page({ params }) {
         {
           "@type": "ListItem",
           position: 2,
-          name: data1?.title,
+          name: data?.title,
           item: `https://fgstmails.com/blog/${slugName}`,
         },
       ],
@@ -93,9 +94,9 @@ export default async function Page({ params }) {
         "@type": "WebPage",
         "@id": `https://fgstmails.com/blog/${slugName}`,
       },
-      headline: data1?.title,
-      description: data1?.mdesc,
-      image: [`${base_url}${data1?.image}`],
+      headline: data?.title,
+      description: data?.mdesc,
+      image: [`${base_url}${data?.image}`],
       author: {
         "@type": "Organization",
         name: "Fgstmails",
@@ -106,16 +107,15 @@ export default async function Page({ params }) {
         name: "Fgstmails",
         logo: {
           "@type": "ImageObject",
-          url: "https://fgstmails.com/images/logo.png", // ✅ Replace with actual logo path
+          url: "https://fgstmails.com/images/logo.png",
         },
       },
-      datePublished: data1?.createdAt,
-      dateModified: data1?.updatedAt || data1?.createdAt,
+      datePublished: data?.createdAt,
+      dateModified: data?.updatedAt || data?.createdAt,
     };
 
     return (
       <>
-        {/* JSON-LD Schema */}
         <Script
           id="breadcrumb-schema"
           type="application/ld+json"
@@ -127,7 +127,7 @@ export default async function Page({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
         />
 
-        <Article data={data1} />
+        <Article data={data} />
       </>
     );
   } catch (error) {
