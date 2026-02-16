@@ -3,7 +3,7 @@ import TopPicks from "../Hero/TopPicks";
 import LatestNews from "../Hero/LatestNews";
 import Trending from "../HeroSection/Trending";
 import Missed from "../HeroSection/Missed";
-import { base_url } from "../Helper/helper";
+// import { base_url } from "../Helper/helper";
 import Image from "next/image";
 
 // ✅ Server-side data fetching
