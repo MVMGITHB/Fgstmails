@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 
 const TopPicks = ({ news = [] }) => {
@@ -24,12 +23,14 @@ const TopPicks = ({ news = [] }) => {
             <div key={slug}>
               <Link
                 href={`/${category}/${slug}`}
-                className="text-md hover:underline cursor-pointer"
+                className="text-md hover:underline"
               >
                 {title}
               </Link>
 
-              {index < 4 && <hr className="h-px my-2 bg-gray-200 border-0" />}
+              {index < 4 && (
+                <hr className="h-px my-2 bg-gray-200 border-0" />
+              )}
             </div>
           );
         })}

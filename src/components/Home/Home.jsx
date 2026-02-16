@@ -7,22 +7,22 @@ import { base_url } from "../Helper/helper";
 import Image from "next/image";
 
 // ✅ Server-side data fetching
-async function getNews() {
-  try {
-    const res = await fetch(`${base_url}/api/blog/getAllBlog`, {
-      cache: "no-store", // always fresh data
-    });
+// async function getNews() {
+//   try {
+//     const res = await fetch(`${base_url}/api/blog/getAllBlog`, {
+//       cache: "no-store", // always fresh data
+//     });
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch news");
-    }
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch news");
+//     }
 
-    return res.json();
-  } catch (error) {
-    // console.error(error);
-    return null;
-  }
-}
+//     return res.json();
+//   } catch (error) {
+//     // console.error(error);
+//     return null;
+//   }
+// }
 
 const Home = async ( {news}) => {
   // const news = await getNews();
