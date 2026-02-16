@@ -251,7 +251,7 @@ useEffect(() => {
             <a
               href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="sponsored noopener noreferrer"
             >
               <img
                 src="/images/aditybirla.png"
@@ -264,7 +264,7 @@ useEffect(() => {
         </div>
 
         {/* Main Content */}
-        <div className="md:col-span-6 space-y-6">
+        <article className="md:col-span-6 space-y-6">
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug">
             {data?.title}
           </h1>
@@ -323,7 +323,7 @@ useEffect(() => {
           </div>
 
           {/* FAQs */}
-          {data?.faqs?.length > 0 && (
+          {/* {data?.faqs?.length > 0 && (
             <div className="bg-gray-50 p-6 rounded">
               <h2 className="text-2xl font-bold mb-4 text-center">
                 Frequently Asked Questions
@@ -339,7 +339,56 @@ useEffect(() => {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
+
+
+
+{/* updated faq */}
+
+{data?.faqs?.length > 0 && (
+  <section
+    className="bg-gray-50 p-6 rounded"
+    itemScope
+    itemType="https://schema.org/FAQPage"
+  >
+    <h2 className="text-2xl font-bold mb-4 text-center">
+      Frequently Asked Questions
+    </h2>
+
+    {data.faqs.map((faq, index) => (
+      <div
+        key={faq._id || index}
+        className="mb-4"
+        itemScope
+        itemProp="mainEntity"
+        itemType="https://schema.org/Question"
+      >
+        <h3
+          className="text-lg font-semibold mb-2"
+          itemProp="name"
+        >
+          Q{index + 1}: {faq.ques}
+        </h3>
+
+        <div
+          itemScope
+          itemProp="acceptedAnswer"
+          itemType="https://schema.org/Answer"
+        >
+          <p className="text-base" itemProp="text">
+            <strong>Ans:</strong> {faq.ans}
+          </p>
+        </div>
+      </div>
+    ))}
+  </section>
+)}
+
+
+
+
+
+
 
           {/* Conclusion */}
           {data?.conclusion && data?.conclusion.length > 0 && (
@@ -358,12 +407,13 @@ useEffect(() => {
             <a
               href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
               target="_blank"
-              rel="noopener noreferrer"
+             rel="sponsored noopener noreferrer"
+
             >
               <img src="/images/aditybirla.png" alt="Ad" className="rounded" />
             </a>
           </div>
-        </div>
+        </article>
 
         {/* Right Sidebar (Desktop) */}
         <div className="hidden md:block md:col-span-3 h-fit sticky top-10">
@@ -372,7 +422,8 @@ useEffect(() => {
             <a
               href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="sponsored noopener noreferrer"
+
             >
               <img
                 src="/images/aditybirla.png"
@@ -402,7 +453,8 @@ useEffect(() => {
         <a
           href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="sponsored noopener noreferrer"
+
         >
           <img src="/images/aditybirla.png" alt="Ad" className="rounded" />
         </a>
