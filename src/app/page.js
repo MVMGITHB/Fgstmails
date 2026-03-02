@@ -1,5 +1,6 @@
 import { base_url } from "@/components/Helper/helper";
 import Home from "@/components/Home/Home";
+import HomePagePopUp from "@/components/popup/HomePagePopUp";
 
 /* ISR → page cached globally and regenerated every 60 sec */
 export const revalidate = 60;
@@ -86,6 +87,7 @@ export default async function Page() {
         }}
       />
 
+      <HomePagePopUp/>
       <Home news={news} />
     </>
   );
