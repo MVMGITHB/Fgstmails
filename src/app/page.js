@@ -87,7 +87,7 @@ export default async function Page() {
         }}
       />
 
-      <HomePagePopUp/>
+      {/* <HomePagePopUp/> */}
       <Home news={news} />
     </>
   );
