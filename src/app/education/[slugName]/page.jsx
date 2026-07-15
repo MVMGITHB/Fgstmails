@@ -61,6 +61,9 @@ export default async function Page({ params }) {
     );
     const data1 = response.data;
 
+
+   
+
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

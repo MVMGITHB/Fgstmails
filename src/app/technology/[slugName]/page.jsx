@@ -5,12 +5,12 @@ import Script from "next/script";
 const Base_url = "https://fgstmails.com/";
 
 export async function generateMetadata({ params }) {
-  const { slugName } = params;
+  const { slugName } = await params;
 
   try {
     const response = await fetch(
       `${base_url}/api/blog/getOneBlogByslug/${slugName}`,
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
     const data = await response.json();
 
@@ -52,14 +52,16 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const { slugName } = params;
+  const { slugName } = await params;
 
   try {
     const response = await fetch(
       `${base_url}/api/blog/getOneBlogByslug/${slugName}`,
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
     const data1 = await response.json();
+
+    console.log("Data is 1 ", data1);
 
     const breadcrumbSchema = {
       "@context": "https://schema.org",
@@ -79,29 +81,16 @@ export default async function Page({ params }) {
         },
       ],
     };
-
+    
     const articleSchema = {
       "@context": "https://schema.org",
-      "@type": "Article",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `https://fgstmails.com/technology/${slugName}`,
-      },
+      "@type": "NewsArticle",
       headline: data1?.title,
-      description: data1?.mdesc,
       image: [`${base_url}${data1?.image}`],
       author: {
-        "@type": "Organization",
-        name: "Fgstmails",
-        url: "https://fgstmails.com",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Fgstmails",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://fgstmails.com/images/logo.png",
-        },
+        "@type": "Person",
+        name: `${data1?.author?.name}`,
+        url: `${base_url}/author/${data1?.author?.slug}`,
       },
       datePublished: data1?.createdAt,
       dateModified: data1?.updatedAt || data1?.createdAt,

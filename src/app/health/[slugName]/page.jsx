@@ -82,26 +82,13 @@ export default async function Page({ params }) {
 
     const articleSchema = {
       "@context": "https://schema.org",
-      "@type": "Article",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `https://fgstmails.com/blog/${slugName}`,
-      },
+      "@type": "NewsArticle",
       headline: data1?.title,
-      description: data1?.subtitle,
       image: [`${base_url}${data1?.image}`],
       author: {
-        "@type": "Organization",
-        name: "Fgstmails",
-        url: "https://fgstmails.com",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Fgstmails",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://fgstmails.com/images/logo.png", // ✅ Replace with actual logo path
-        },
+        "@type": "Person",
+        name: `${data1?.author?.name}`,
+        url: `${base_url}/author/${data1?.author?.slug}`,
       },
       datePublished: data1?.createdAt,
       dateModified: data1?.updatedAt || data1?.createdAt,
