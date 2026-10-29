@@ -51,7 +51,7 @@ const Crousel = () => {
 
   return (
     <div className="relative flex justify-center py-6">
-      <div className="w-[90%] lg:w-[95%] relative">
+      <div className="w-[90%] lg:w-[100%] relative">
         {/* Left Button */}
         <button
           className="absolute -left-6 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 shadow"
@@ -74,20 +74,24 @@ const Crousel = () => {
             <Link
               href={`/${slide?.category?.slug}/${slide?.slug}`}
               key={i}
-              className="px-2"
+              className="px-2 block"
             >
-              <div
-                className="relative h-64 md:h-80 bg-cover bg-center rounded-xl overflow-hidden group"
-                style={{ backgroundImage: `url('${base_url}${slide?.image}')` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:scale-105 transition-transform duration-300" />
+              <div className="flex flex-col group">
+                {/* Banner Image Container */}
+                <div
+                  className="relative h-44 md:h-48 bg-cover bg-center rounded-xl overflow-hidden"
+                  style={{ backgroundImage: `url('${base_url}${slide?.image}')` }}
+                >
+                  <div className="absolute inset-0 bg-black/10 group-hover:scale-105 transition-transform duration-300" />
+                </div>
 
-                <div className="absolute bottom-0 p-4 z-10 w-full text-white">
-                  <div className="inline-block bg-[#B00020] bg-opacity-90 px-3 py-1 rounded-full text-sm font-semibold mb-2 shadow-md">
+                {/* Text and Tag Below the Banner */}
+                <div className="mt-3 px-1">
+                  <div className="inline-block bg-[#B00020] bg-opacity-90 px-3 py-0.5 rounded-full text-xs font-semibold mb-1 shadow-sm text-white">
                     {slide?.tag?.tagname}
                   </div>
 
-                  <p className="text-lg font-semibold leading-snug">
+                  <p className="text-base font-semibold text-gray-900  truncate">
                     {slide?.title}
                   </p>
                 </div>

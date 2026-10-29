@@ -57,7 +57,7 @@ export default async function NewsUi({ url }) {
                   alt={blog.title}
                   width={400}
                   height={250}
-                  className="w-full h-52 object-cover"
+                  className="w-full h-56 object-cover"
                 />
 
                 <div className="p-4 flex flex-col">

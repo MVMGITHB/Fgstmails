@@ -28,7 +28,7 @@ function Trending({news}) {
             <img
               src={`${base_url}${story?.image}`}
               alt={story?.alt}
-              className="w-full h-48 object-cover rounded-md mb-2"
+              className="w-full h-60 object-cover rounded-md mb-2"
             />
             <p className="text-lg hover:underline text-black font-bold cursor-pointer">
              {story?.title}
