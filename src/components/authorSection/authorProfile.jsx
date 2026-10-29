@@ -121,7 +121,7 @@ export default function AuthorPage({ slug }) {
                       </div>
 
                       <a
-                        href={`/${post?.category?.slug}/articles/${post?.slug}`}
+                        href={`/${post?.category?.slug}/${post?.slug}`}
                         className="inline-block mt-4 text-blue-600 hover:underline text-sm font-medium"
                       >
                         Read More →
